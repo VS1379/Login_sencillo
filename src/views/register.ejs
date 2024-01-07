@@ -11,40 +11,50 @@
 </head>
 
 <body>
-    <form class="register" action="/register" method="post" enctype="multipart/form-data">
+    <form class="register" action="/register" method="post">
 
         <div><label>Ingresa tu Nombre</label>
-            <input type="text" name="name"></input>
-            <div class="error">
-                <% if (locals.errors && locals.errors.name) { %>
+            <input type="text" name="name" />
+            <% if (locals.errors && locals.errors.name) { %>
+                <div class="error">
                     <%= errors.name.msg%>
-                        <% } %>
-            </div>
+                </div>
+                <% } %>
         </div>
         <div><label>Ingresa tu Apellido</label>
-            <input type="text" name="lastName"></input>
-            <div class="error">
-                <% if (locals.errors && locals.errors.lastName) { %>
+            <input type="text" name="lastName" />
+            <% if (locals.errors && locals.errors.lastName) { %>
+                <div class="error">
                     <%= errors.lastName.msg%>
-                        <% } %>
-            </div>
+                </div>
+                <% } %>
         </div>
         <div><label>Ingresa tu email</label>
-            <input type="email" name="email"></input>
-            <div class="error">
-                <% if (locals.errors && locals.errors.email) { %>
+            <input type="email" name="email" />
+            <% if (locals.errors && locals.errors.email) { %>
+                <div class="error">
                     <%= errors.email.msg%>
-                        <% } %>
-            </div>
+                </div>
+                <% } %>
         </div>
         <div><label>Ingresa una Contraseña</label>
-            <input type="password" name="password"></input>
-            <div class="error">
-                <% if (locals.errors && locals.errors.password) { %>
+            <input type="password" name="password" />
+
+            <% if (locals.errors && locals.errors.password) { %>
+                <div class="error">
                     <%= errors.password.msg%>
-                        <% } %>
-            </div>
+                </div>
+                <% } %>
         </div>
+        <div><label>Selecciona un color</label>
+            <select name="color">
+                <option value="red" selected>rojo</option>
+                <option value="blue">azul</option>
+                <option value="yellow">amarillo</option>
+                <option value="green">verde</option>
+            </select>
+        </div>
+        <!-- <form class="register" action="/register" method="post" enctype="multipart/form-data"> -->
         <div class="buttons">
             <button type="submit">Ingresar</button>
             <button type="reset">Cancelar</button>

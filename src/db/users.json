@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Jorge",
+        "lastName": "Manazano",
+        "email": "Jorge@gmail.com",
+        "password": "$2a$10$IMYp.M8MrFJYhYMKjyi0/ukMyktb9SI1XJhdjf/KNLOPKw0R5L46e",
+        "color": "red"
+    },
+    {
+        "name": "Damian",
+        "lastName": "Lucciola",
+        "email": "Damian@gmail.com",
+        "password": "$2a$10$IMYp.M8MrFJYhYMKjyi0/ukMyktb9SI1XJhdjf/KNLOPKw0R5L46e",
+        "color": "green"
+    },
+    {
+        "name": "Pablo",
+        "lastName": "Delmonte",
+        "email": "PabloDelmonte@gmail.com",
+        "password": "$2a$10$Jx/YUtbi/hvGpnYB8iPXs.nWZ1nAY9A5rggn2IR7eG5RsY0Ec1QOq",
+        "color": "green"
+    }
+]

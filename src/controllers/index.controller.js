@@ -1,18 +1,8 @@
-const { validationResult } = require("express-validator");
-
+const session = require("express-session");
 module.exports = indexController = {
-  login: (req, res) => {
-    res.render("login");
-  },
-  register: (req, res) => {
-    res.render("register");
-  },
-  registerPost: (req, res) => {
-    let errors = validationResult(req);
-    if (errors) {
-      errors = errors.mapped();
-      return res.render("register", { errors });
-    }
-    res.send("todo ok!");
+  index: (req, res) => {
+    let user = req.session.userLogued;
+    console.log(req.session.userLogued);
+    res.render("index", { user });
   },
 };
