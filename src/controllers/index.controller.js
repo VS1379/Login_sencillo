@@ -4,8 +4,9 @@ module.exports = indexController = {
     let user = req.session.userLogued;
     res.render("index", { user });
   },
-  logout: (req,res)=>{
+  logout: (req, res) => {
     req.session.destroy();
-    return res.redirect("/login")
-  }
+    res.clearCookie("userEmail")
+    return res.redirect("/login");
+  },
 };

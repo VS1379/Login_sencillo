@@ -12,6 +12,9 @@ module.exports = loginController = {
       if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
         delete userToLogin.password;
         req.session.userLogued = userToLogin;
+        if (req.body.rememberme) {
+          res.cookie("userEmail", req.body.email, { maxAge: 600000 });
+        }
         return res.redirect("/index");
       }
       console.log(bcrypt.compareSync(req.body.password, userToLogin.password));

@@ -6,7 +6,7 @@ const loginRoute = require("./routes/login.routes");
 const registerRoute = require("./routes/register.routes");
 const methodOverride = require("method-override");
 const session = require("express-session");
-
+const cookies = require("cookie-parser");
 const port = process.env.PORT || 3001;
 
 const app = express();
@@ -20,10 +20,12 @@ app.use(express.json()); //Enviar y recibir informacion con los metodos http
 app.use(
   session({ secret: "shhh!", resave: "false", saveUninitialized: "false" })
 );
+app.use(cookies());
 
 app.use(logger("dev"));
 
-app.use("/", indexRoute);
+app.use("/", loginRoute);
+app.use("/index", indexRoute);
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 
