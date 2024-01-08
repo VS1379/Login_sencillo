@@ -9,21 +9,29 @@
 
 <body>
     <label> BIENVENIDO </label>
-    <br />
-    <label>
-        NOMBRE:
-        <%= locals.user.name%>
-    </label>
-    <br />
-    <label>
-        APELLIDO:
-        <%= locals.user.lastName%>
-    </label>
-    <br />
-    <label>
-        EMAIL:
-        <%= locals.user.email%>
-    </label>
+    <% if (locals.user) { %>
+        <br />
+        <label>
+            NOMBRE:
+
+            <%= locals.user.name%>
+        </label>
+        <br />
+        <label>
+            APELLIDO:
+            <%= locals.user.lastName%>
+        </label>
+        <br />
+        <label>
+            EMAIL:
+            <%= locals.user.email%>
+        </label>
+        <% } %>
+            <form action="/index/logout" method="get">
+                <button type="submit">
+                    Logout
+                </button>
+            </form>
 </body>
 
 </html>

@@ -1,8 +1,6 @@
-const session = require("express-session");
-module.exports = auth = {
-    if (req.session.email) {
-        console.log("ESTA LOGUEADO");
-        return res.redirect("/index");
-    }
-    console.log("NO ESTA LOGUEADO");
+module.exports = function authMiddleware(req, res, next) {
+ if(!req.session.userLogued){
+    return res.redirect("/login")
+ }
+ next();
 }
